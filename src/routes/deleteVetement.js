@@ -12,12 +12,12 @@ module.exports = app => {
                 const message = `La ressource n'est pas disponible`
                 res.status(404).json({message})
             }
-            // suppression de la vetement
+            // suppression de le vetement
             return Vetement.destroy({
                 where: { id: id }
             })
             .then(() =>{
-                const message = `La vetement ${VetementToDelete.name} a été supprimé avec succes`
+                const message = `Le vetement ${VetementToDelete.name} a été supprimé avec succes`
                 res.json({message, data: VetementToDelete})
             })
         })

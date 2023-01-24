@@ -10,12 +10,12 @@ module.exports = app => {
         .then(() =>{
             return Vetement.findByPk(id)
             .then(vetement =>{
-                // verification de l'existance de la vetement ayant cet id
+                // verification de l'existance de le vetement ayant cet id
                 if(vetement === null){
-                    const message = `La vetement avec l'id ${id} n'existe pas!!. Request aborted`
+                    const message = `le vetement avec l'id ${id} n'existe pas!!. Request aborted`
                     res.status(404).json({message})
                 }
-                const message= `la vetement ${vetement.name} à été modifier avec succès`
+                const message= `le vetement ${vetement.name} à été modifier avec succès`
                 res.json({message, data: vetement})
             })
         })
